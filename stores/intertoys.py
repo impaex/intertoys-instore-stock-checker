@@ -41,8 +41,7 @@ def get_intertoys_store_stock(part_number):
             for item in json_data['inventory']:
                 store_number = item['storeNumber']
                 available = item['available']
-                stock_list.append({'storeNumber': store_number, "stock": available})
-                print(f"Store Number: {store_number} - Availability: {available}")
+                stock_list.append({'store': store_number, "stock": available})
             return stock_list
         except ValueError:
             print("Error: Not valid JSON format")
